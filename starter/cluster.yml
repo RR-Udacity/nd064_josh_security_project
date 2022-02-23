@@ -1,8 +1,8 @@
 # mainatiner: nick.reva@snap.com
 nodes:
-- address: 192.168.50.101
+- address: 192.168.56.101
   port: "22"
-  internal_address: 192.168.50.101
+  internal_address: 192.168.56.101
   role:
   - controlplane
   - etcd
@@ -16,9 +16,9 @@ nodes:
   ssh_cert_path: ""
   labels: {}
   taints: []
-#- address: 192.168.50.102
+#- address: 192.168.56.102
 #  port: "22"
-#  internal_address: 192.168.50.102
+#  internal_address: 192.168.56.102
 #  role:
 #  - worker
 #  hostname_override: node2
@@ -134,20 +134,20 @@ system_images:
   kubernetes: rancher/hyperkube:v1.20.4-rancher1
   flannel: rancher/coreos-flannel:v0.13.0-rancher1
   flannel_cni: rancher/flannel-cni:v0.3.0-rancher6
-  calico_node: rancher/calico-node:v3.17.2
-  calico_cni: rancher/calico-cni:v3.17.2
-  calico_controllers: rancher/calico-kube-controllers:v3.17.2
-  calico_ctl: rancher/calico-ctl:v3.17.2
-  calico_flexvol: rancher/calico-pod2daemon-flexvol:v3.17.2
-  canal_node: rancher/calico-node:v3.17.2
-  canal_cni: rancher/calico-cni:v3.17.2
-  canal_controllers: rancher/calico-kube-controllers:v3.17.2
+  calico_node: rancher/calico-node:v3.18.1
+  calico_cni: rancher/calico-cni:v3.18.1
+  calico_controllers: rancher/calico-kube-controllers:v3.18.1
+  calico_ctl: rancher/calico-ctl:v3.18.1
+  calico_flexvol: rancher/calico-pod2daemon-flexvol:v3.18.1
+  canal_node: rancher/calico-node:v3.18.1
+  canal_cni: rancher/calico-cni:v3.18.1
+  canal_controllers: rancher/calico-kube-controllers:v3.18.1
   canal_flannel: rancher/coreos-flannel:v0.13.0-rancher1
-  canal_flexvol: rancher/calico-pod2daemon-flexvol:v3.17.2
+  canal_flexvol: rancher/calico-pod2daemon-flexvol:v3.18.1
   weave_node: weaveworks/weave-kube:2.8.1
   weave_cni: weaveworks/weave-npc:2.8.1
   pod_infra_container: rancher/pause:3.2
-  ingress: rancher/nginx-ingress-controller:nginx-0.43.0-rancher1
+  ingress: rancher/nginx-ingress-controller:nginx-1.1.0-rancher1
   ingress_backend: rancher/nginx-ingress-controller-defaultbackend:1.5-rancher1
   metrics_server: rancher/metrics-server:v0.4.1
   windows_pod_infra_container: rancher/kubelet-pause:v0.1.6
