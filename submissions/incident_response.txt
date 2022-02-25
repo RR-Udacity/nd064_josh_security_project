@@ -1,0 +1,16 @@
+1. Incident commander name: Josh
+
+2. Executive Summary of what happened:
+The overnight ops team found that a number of crypto-miner workloads were launched into our `prod` kubernetes cluster overnight.  The cluster suffered a degredation of performance as the miners started to absorb resources and increase scaling workloads.
+
+3. Summary of what was affected:
+The key-value store `etcd` in our production cluster was compromised which allowed people to spoof the credentials to launch a new workload.  Our ArgoCD instance was undergoing maintenance at the time or else we would have noted the descrepancy in those logs.
+
+4. Summmry of the impact:
+There was a large amount of compute resources which were devoted to this workload for a period of 25 minutes.  We provided approximately 200 CPU cores for the workload scaling costing approximatley $6000 in compute resources with our Azure GovCloud host.
+
+5. Summary of the remediation steps:
+We've since cleaned up the intrustion and rebuilt the certificates securing the key-value `etcd` store.  We've brought ArgoCD back online and have reinstantiated a system of GitOps-Only deployments.
+
+6. Summary of lessons learned:
+We need to set up a whitelist of certain image types which are allowed to be launched as workloads to avoid unexpected loading of miners and the like.  We have a relatively short list of image names we use and it wouldn't be hard to double check a new image to launch appears on the whitelist.  This would be a low-tech way to guarantee this type of exploit couldn't happen again.  We're also taking steps to secure the hardware tokens required to launch new workloads in the production cluster.

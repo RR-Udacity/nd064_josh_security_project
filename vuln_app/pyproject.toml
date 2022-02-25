@@ -1,0 +1,43 @@
+[project]
+name = ""
+version = ""
+description = ""
+authors = [{ name = "Josh Haines", email = "Josh@JoshHaines.com" }]
+dependencies = [
+    "aiohttp-jinja2",
+    "aiohttp-session",
+    "aiohttp",
+    "aiopg",
+    "aioredis",
+    "async-timeout",
+    "attrs",
+    "chardet",
+    "hiredis",
+    "idna",
+    "jinja2",
+    "markupsafe",
+    "multidict",
+    "psycopg2-binary",
+    "pyyaml",
+    "trafaret-config",
+    "trafaret",
+    "yarl",
+]
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+[project.urls]
+homepage = ""
+
+[tool]
+
+[tool.pdm]
+
+[[tool.pdm.source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[build-system]
+requires = ["pdm-pep517"]
+build-backend = "pdm.pep517.api"

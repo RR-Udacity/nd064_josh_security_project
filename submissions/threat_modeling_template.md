@@ -26,14 +26,14 @@ E - Elevation of Privilege: The privileged flag could be used allowing unauthori
 
 2.2  - Ensure network traffic is restricted between containers on the default bridge (Automated)
 
-Add `"icc": false` to `/etc/docker/daemon.json`
+  Add `"icc": false` to `/etc/docker/daemon.json`
 
 2.14 - Ensure containers are restricted from acquiring new privileges (Automated)
 
-Add `"no-new-privileges": true` to `/etc/docker/daemon.json`
+  Add `"no-new-privileges": true` to `/etc/docker/daemon.json`
 
 2.15 - Ensure live restore is Enabled (Automated)
 
-Add `"live-restore": true` to `/etc/docker/daemon.json`
+  Add `"live-restore": true` to `/etc/docker/daemon.json`
 
-Failures before hardening: 38, Failures after Hardening: 35
+>Failures before hardening: 38, Failures after Hardening: 35
